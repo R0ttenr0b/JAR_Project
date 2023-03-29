@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>JAR Inspection Company for Restaurants</title>
+	<title>JAR Schedule an Inspection</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
 	<style>
@@ -21,7 +21,6 @@
 
 		.nav-link {
 			color: #222;
-			/*font-size*/
 		}
 		.Inspection-Form {
 			margin:auto;
@@ -31,7 +30,7 @@
 		.Inspection-Form input {
 			width:400px;
 		}
-		.Inspection-Form #submition {
+		.Inspection-Form #submission {
 			width:200px;
 		}
 	</style>
@@ -41,10 +40,6 @@
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<a href="#"><img height="50" style="border-radius:30px;" src="https://cdn.discordapp.com/attachments/1008571069797507102/1088568757879836692/RottenRob_A_minimalistic_and_elite_brand_logo_for_a_restaurant__200dcb2f-f0bd-4469-a5d3-603ebd0b7fea.png"></a>
-			<!-- <a class="navbar-brand" href="#"><img src="logo.png" alt="Company Logo"></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>-->
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item">
@@ -67,20 +62,24 @@
 		</nav>
 	</header>
 	<div class="Inspection-Form">
-		<form action="">
+		<form action="" method="">
 			<h1 style="padding-left:70px; font-size:1.5em">Schedule an Inspection</h1>
 			<br>
-			<label for="fname">First Name: *</label>
+			<label for="fname">First Name: </label>
 			<br>
 			<input require type="text" id="fname">
 			<br>
-			<label for="lname">Last Name: *</label>
+			<label for="lname">Last Name: </label>
 			<br>
 			<input require type="text" id="lname">
 			<br>
-			<label for="email">Email: *</label>
+			<label for="email">Email: </label>
 			<br>
 			<input require type="email" id="email">
+			<br>
+			<label for="phone">Phone Number: </label>
+			<br>
+			<input require type="text" id="phone">
 			<br>
 			<label for="addr">Address: </label>
 			<br>
@@ -99,12 +98,9 @@
 			<input require type="date" id="date">
 			<br>
 			<br>
-			<input type="submit" value="Schedule Inspection" name="submition">
-			<input require type="reset" value="Clear Form" name="submition">
+			<input type="submit" value="Schedule Inspection" name="submission">
+			<input require type="reset" value="Clear Form" name="submission">
 		</form>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
