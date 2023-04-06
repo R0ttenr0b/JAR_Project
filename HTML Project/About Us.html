@@ -8,12 +8,41 @@
 	<link rel="stylesheet" href="style.css">
 	<style>
 		body {
-			background: #fff;
+			background: #255C55;
 			color: #444;
 			font-family: "Open Sans", sans-serif;
 			line-height: 1.6;
 			margin: 0;
 			padding: 0;
+		}
+		.hero-section {
+			/*background-image: url('https://cdn.discordapp.com/attachments/1008571069797507102/1088568757879836692/RottenRob_A_minimalistic_and_elite_brand_logo_for_a_restaurant__200dcb2f-f0bd-4469-a5d3-603ebd0b7fea.png');
+		    */background-size: cover;
+			background-position: center;
+			height: 75vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: relative;
+		}
+		.hero-section h1 {
+			color: #fff;
+			font-size: 4rem;
+			font-weight: 300;
+			margin-top: 1rem;
+			text-align: center;
+			text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+		}
+		.hero-section h5 {
+			font-size: 2rem;
+		}
+		.hero-section div {
+			color: #fff;
+			font-size: 1.5rem;
+			font-weight: 300;
+			margin-top: 1rem;
+			text-align: left;
+			text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 		}
 		.navbar-collapse {
 			flex-grow: unset !important;
@@ -56,11 +85,18 @@
 			</div>
 		</nav>
 	</header>
-    <div class="main">
-        <h1>About Us</h1>
-		<h5>Our Philosophy:</h5>
-        <p>We believe that every restaurant should be a place where customers can enjoy delicious food in a safe and clean environment. Our philosophy is to provide comprehensive inspection services to ensure that restaurants are meeting the highest standards of food safety and sanitation. We are committed to working closely with restaurant owners and managers to identify areas for improvement and provide actionable recommendations to help them maintain a healthy and thriving business. Our goal is to create a positive impact on the restaurant industry by promoting a culture of excellence and accountability in food service.</p>
-		<p>We are a four person company dedicated to ensuring restaraunts are safe places for people to enjoy with their friends and family.</p>
-	</div>
+    <section class="hero-section">
+		<div class="hero-overlay"></div>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="main">
+					<h1>About Us</h1>
+					<h5>Our Philosophy:</h5>
+					<p>We believe that every restaurant should be a place where customers can enjoy delicious food in a safe and clean environment. Our philosophy is to provide comprehensive inspection services to ensure that restaurants are meeting the highest standards of food safety and sanitation. We are committed to working closely with restaurant owners and managers to identify areas for improvement and provide actionable recommendations to help them maintain a healthy and thriving business. Our goal is to create a positive impact on the restaurant industry by promoting a culture of excellence and accountability in food service.</p>
+					<p>We are a four person company dedicated to ensuring restaraunts are safe places for people to enjoy with their friends and family.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
