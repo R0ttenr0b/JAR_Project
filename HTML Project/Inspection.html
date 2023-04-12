@@ -24,14 +24,39 @@
 		}
 		.Inspection-Form {
 			margin:auto;
-			width:400px;
+			margin-top:1%;
+			width:30%;
 			padding:10px;
+			padding-top:0px;
+			padding-bottom:0xp;
+			color:black;
+    		background-color: whitesmoke;
+			border-radius:15px;
+			text-align:center;
+		}
+		form {
+			text-align:left;
+			padding:30px;
 		}
 		.Inspection-Form input {
-			width:400px;
+			width:100%;
+			border-radius:3px;
+			border-width:1px;
+			margin-bottom:5px;
 		}
-		.Inspection-Form #submission {
-			width:200px;
+		.submission {
+			border-radius:20px;
+            background-color:#4CAF50;
+            color:white;
+			border-width:0px;
+		}
+		.submission:hover {
+            background-color:#3e8e41;
+		}
+		.required {
+			color:red;
+			font-style:italic;
+			font-size:0.8em;
 		}
 	</style>
 
@@ -62,45 +87,68 @@
 		</nav>
 	</header>
 	<div class="Inspection-Form">
-		<form action="" method="">
-			<h1 style="padding-left:50px; font-size:1.8em; text-shadow: 2px 2px 5px rgba(0,0,0,0.5);">Schedule an Inspection</h1>
+		<form action="" method="" id="inspection">
+			<h1 style="text-align:center; font-size:1.8em;">Schedule an Inspection</h1>
 			<br>
-			<label for="fname">First Name: </label>
+			<label for="fname">First Name: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
 			<input require type="text" id="fname">
 			<br>
-			<label for="lname">Last Name: </label>
+			<label for="lname">Last Name: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
 			<input require type="text" id="lname">
 			<br>
-			<label for="email">Email: </label>
+			<label for="email">Email: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
 			<input require type="email" id="email">
 			<br>
-			<label for="phone">Phone Number: </label>
+			<label for="phone">Phone Number: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
 			<input require type="text" id="phone">
 			<br>
-			<label for="addr">Address: </label>
+			<label for="addr">Address: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
 			<input require type="text" id="addr">
 			<br>
-			<label for="city">City: </label>
+			<label for="city">City: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
 			<input require type="text" id="city">
 			<br>
-			<label for="zip">Zip Code: </label>
+			<label for="zip">Zip Code: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
 			<input require type="number" id="zip">
 			<br>
-			<label for="date">Date: </label>
+			<label for="date">Date: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
 			<input require type="date" id="date">
 			<br>
 			<br>
-			<input type="submit" value="Schedule Inspection" name="submission">
-			<input require type="reset" value="Clear Form" name="submission">
+			<input type="submit" value="Schedule Inspection" class="submission">
+			<input require type="reset" value="Clear Form" class="submission">
 		</form>
 	</div>
+	<script>
+		document.getElementById("inspection").addEventListener("submit", function(e) {
+			e.preventDefault();
+			let error = document.getElementsByClassName("required");
+			let inputs = document.querySelectorAll("input");
+
+			for(let i = 0; i < error.length; i++) {
+				error[i].style.display = "none";
+			}
+
+			for(let i = 0; i < inputs.length - 2; i++) {
+				if(inputs[i].value == "") {
+					error[i].style.display = "inline";
+				}
+			}
+		});
+		document.getElementById("inspection").addEventListener("reset", function(e) {
+			let error = document.getElementsByClassName("required");
+			for(let i = 0; i < error.length; i++) {
+				error[i].style.display = "none";
+			}
+		});
+	</script>
 </body>
 </html>

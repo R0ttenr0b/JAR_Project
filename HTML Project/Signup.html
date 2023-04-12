@@ -51,7 +51,7 @@
         .login_button {
             background-color:#4CAF50;
             color:white;
-            width:100px;
+            width:150px;
             text-align:center;
             border-radius:10px;
             border-width:0px;
@@ -77,9 +77,9 @@
 		a:clicked {
 			color:#255C55;
 		}
-		label {
-			padding-top:10px;
-		}
+        label {
+            padding-top:10px;
+        }
 	</style>
 
 </head>
@@ -117,23 +117,34 @@
 				<br>
 				<div id="user_empty" style="display:none;" class="error">
 					<span>Username required</span>
-					<br>
+                    <br>
 				</div>
+
 				<label for="password">Password:</label>
 				<br>
 				<input type="password" id="password" class="text">
 				<div id="pass_empty" style="display:none;" class="error">
-					<br>
+                    <br>
 					<span>Password required</span>
-					<br>
 				</div>
-				<div class="remember">
-					<input type="checkbox" id="Remember">
-					<label for="Remember">Remember Me</label>
+
+				<br>
+				<label for="password2"> Confirm Password:</label>
+				<br>
+				<input type="password" id="password2" class="text">
+				<br>
+				<div id="pass2_empty" style="display:none;" class="error">
+					<span>Password Confirmation Required</span>
+                    <br>
 				</div>
-				<input type="submit" value="Login" class="login_button">
+				<div id="pass_match" style="display:none;" class="error">
+					<span>Passwords Don't Match</span>
+                    <br>
+				</div>
+                <br>
+				<input type="submit" value="Create Account" class="login_button">
 				<hr>
-				<a href="Signup.html">Make an Account</a>
+				<a href="Login.html">Already Have An Account</a>
 			</form>
         </div>
 	</div>
@@ -143,10 +154,13 @@
 		e.preventDefault();
 		let username = document.getElementById("username");
 		let password = document.getElementById("password");
+		let password2 = document.getElementById("password2");
 
 
 		document.getElementById("user_empty").style.display = "none";
 		document.getElementById("pass_empty").style.display = "none";
+		document.getElementById("pass2_empty").style.display = "none";
+		document.getElementById("pass_match").style.display = "none";
 
 		let error = false;
 		if (username.value == "") {
@@ -157,6 +171,14 @@
 			document.getElementById("pass_empty").style.display = "inline";
 			error = true;
 		}
+		if (password2.value == "") {
+			document.getElementById("pass2_empty").style.display = "inline";
+			error = true;
+		}
+        if (password.value != password2.value) {
+			document.getElementById("pass_match").style.display = "inline";
+			error = true;
+        }
 		if (error)
 			console.log("error");
 	});
