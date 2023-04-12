@@ -8,18 +8,18 @@
 	<link rel="stylesheet" href="style.css">
 	<style type="text/css">
 		body {
-			background: #255C55;
-			color: #444;
+			background: #F4F4F4;
+			color: #222;
 			font-family: "Open Sans", sans-serif;
 			line-height: 1.6;
 			margin: 0;
 			padding: 0;
 		}
 		.hero-section {
-			/*background-image: url('https://cdn.discordapp.com/attachments/1008571069797507102/1088568757879836692/RottenRob_A_minimalistic_and_elite_brand_logo_for_a_restaurant__200dcb2f-f0bd-4469-a5d3-603ebd0b7fea.png');
-		    */background-size: cover;
+			background-image: url('https://www.nextlevelinsp.com/wp-content/uploads/2021/07/services-header-bg-1.jpg');
+			background-size: cover;
 			background-position: center;
-			height: 60vh;
+			height: 50vh;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -28,29 +28,56 @@
 		.hero-section h1 {
 			color: #fff;
 			font-size: 4rem;
+			font-weight: 700;
+			margin-top: 1rem;
+			text-align: center;
+			text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+		}
+        .hero-section p {
+			color: #fff;
+			font-size: 1.5rem;
 			font-weight: 300;
 			margin-top: 1rem;
 			text-align: center;
 			text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 		}
-		.hero-section div {
-			color: #fff;
-			font-size: 1.5rem;
-			font-weight: 300;
-			margin-top: 1rem;
-			text-align: left;
-			text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-		}
-        #hero-section{
-            display:inline-block;
-            width: 300px;
-            height: 300px;
-            border: 1px solid black;
+        .services-section {
+            background-color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .service-item {
+            margin: 0 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #f6f6f6;
+            text-align: center;
+        }
+        .service-item:hover {
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+        .service-item img {
+            max-height: 200px;
+            margin-bottom: 20px;
+        }
+        .service-item h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #222;
+        }
+        .service-item p {
+            margin-bottom: 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #666;
         }
 		.navbar-collapse {
 			flex-grow: unset !important;
 		}
-
 		.nav-link {
 			color: #222;
 		}
@@ -69,18 +96,22 @@
             height: auto;
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
-            align-content: center;
+            flex-wrap:
         }
         .flex-box{
             width: 300px;
             height: 350px;
             padding: 5px;
-            background-color: black; 
-            font-size: 10px;
+            background-color: #f6f6f6; 
+            font-size: 16px;
             text-align: top;
-            line-height: 100px;
+            line-height: 1.5;
             margin: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 	</style>
 
@@ -112,29 +143,59 @@
 	</header>
     <section class="hero-section">
 		<div class="hero-overlay"></div>
-        <h1>Services We Offer</h1>
-		<div class="flex-container">
-            <div class="flex-box">
-                Inspects and regulates restaurant cleanliness
-                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.electrosteam.com%2Fhow-do-you-clean-commercial-kitchen%2F&psig=AOvVaw37u1qc2ns7-xAUzVwbNvEX&ust=1681070835210000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJiK3YKLm_4CFQAAAAAdAAAAABAb" alt="Clean Kitchen"/>
-            </div>
-            <div class="flex-box">
-                Ensure employees have good hygiene
-            </div>
-            <div class="flex-box">
-                Enforce storage area safety/cleanliness
-            </div>
-            <div class="flex-box">
-                Check equipment funcionality and cleanliness
-            </div>
-            <div class="flex-box">
-                Ensure garbage disposal/pest control is enforced
-            </div>
-            <div class="flex-box">
-                Make sure no contamination/food is handled with clean utensils
+        <div class="container">
+            <h1>Services We Offer</h1>
+            <p>We provide a range of restaurant inspection services to help you maintain a safe and healthy environment for your customers and employees.</p>
+        </div>
+	</section>
+    <section class="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="" alt="Clean Kitchen"/>
+                        <h2>Restaurant Cleanliness Inspection</h2>
+                        <p>We inspect and regulate restaurant cleanliness to help prevent foodborne illness and ensure compliance with health regulations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="" alt="Employee Hygiene Inspection"/>
+                        <h2>Employee Hygiene Inspection</h2>
+                        <p>We ensure that your employees are practicing good hygiene to prevent the spread of germs and protect the health of your customers.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="" alt="Storage Area Inspection"/>
+                        <h2>Storage Area Inspection</h2>
+                        <p>We enforce safety and cleanliness in your restaurant's storage areas to help prevent cross-contamination and ensure food safety.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="" alt="Equipment Inspection"/>
+                        <h2>Equipment Inspection</h2>
+                        <p>We check the functionality and cleanliness of your restaurant's equipment to help prevent breakdowns and ensure food safety.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="" alt="Garbage Disposal/Pest Control Inspection"/>
+                        <h2>Garbage Disposal/Pest Control Inspection</h2>
+                        <p>We ensure that your restaurant's garbage disposal and pest control measures are in place and effective to prevent health hazards and maintain a clean environment.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item">
+                        <img src="" alt="Utensil and Contamination Inspection"/>
+                        <h2>Utensil and Contamination Inspection</h2>
+                        <p>We ensure that your restaurant is handling food safely and avoiding contamination by using clean utensils and following proper food handling procedures.</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-	</section>
+    </section>
 </body>
 </html>
+
