@@ -1,74 +1,119 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>JAR About Us</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
-	<style>
-		body {
-			background: #f2f2f2;
-			color: #444;
-			font-family: "Open Sans", sans-serif;
-			line-height: 1.6;
-			margin: 0;
-			padding: 0;
-		}
-		.hero-section {
-			background-image: url('https://images.unsplash.com/photo-1480694313141-fce5e697ee3e');
-			background-size: cover;
-			background-position: center;
-			height: 75vh;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			position: relative;
-		}
-		.hero-section h1 {
-			color: #fff;
-			font-size: 4rem;
-			font-weight: 300;
-			margin-top: 1rem;
-			text-align: center;
-			text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-		}
-		.hero-section h5 {
-			font-size: 2rem;
-			font-weight: bold;
-			color: #fff;
-			margin-bottom: 1rem;
-			text-align: center;
-			text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-		}
-		.hero-section div {
-			color: #fff;
-			font-size: 1.5rem;
-			font-weight: 300;
-			margin-top: 1rem;
-			text-align: left;
-			text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-			background-color: rgba(0,0,0,0.5);
-			padding: 1.5rem;
-			border-radius: 10px;
-			box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-		}
-		.navbar-collapse {
-			flex-grow: unset !important;
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAR About Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #255C55;
+        }
 
-		.nav-link {
-			color: #222;
-		}
-		.main {
-			margin:auto;
-			width: 80%;
-			padding:2rem;
-            text-align:center;
-		}
-	</style>
+        header {
+            background-color: #255C55;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
 
+        .navbar-brand {
+            display: inline-block;
+            margin-right: 1rem;
+            line-height: inherit;
+            white-space: nowrap;
+            font-size: 2rem;
+            color: #000000;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #000000;
+        }
+
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1480694313141-fce5e697ee3e');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero-section p {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #fff;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero-section a {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #02c698;
+            padding: 1.5rem 3rem;
+            text-transform: uppercase;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .hero-section a:hover {
+            background-color: #018d73;
+        }
+
+        footer {
+            background-color: #212121;
+            padding: 50px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer-links li {
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        .footer-links li a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 	<header>
@@ -79,8 +124,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="JAR_project.html">Home</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="Services.html
+										<li class="nav-item">
+						<a class="nav-link" href="Services.html">Services</a>
+					</li>
 					<li class="nav-item active">
 						<a class="nav-link" href="About Us.html">About Us</a>
 					</li>
@@ -99,10 +145,10 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="main">
-					<h1>About Us</h1>
-					<h5>Our Philosophy:</h5>
-					<p>We believe that every restaurant should be a place where customers can enjoy delicious food in a safe and clean environment. Our philosophy is to provide comprehensive inspection services to ensure that restaurants are meeting the highest standards of food safety and sanitation. We are committed to working closely with restaurant owners and managers to identify areas for improvement and provide actionable recommendations to help them maintain a healthy and thriving business. Our goal is to create a positive impact on the restaurant industry by promoting a culture of excellence and accountability in food service.</p>
-					<p>We are a four person company dedicated to ensuring restaurants are safe places for people to enjoy with their friends and family.</p>
+					<h1 style="color:#fff;">About Us</h1>
+					<h5 style="color:#fff;">Our Philosophy:</h5>
+					<p style="color:#fff;">We believe that every restaurant should be a place where customers can enjoy delicious food in a safe and clean environment. Our philosophy is to provide comprehensive inspection services to ensure that restaurants are meeting the highest standards of food safety and sanitation. We are committed to working closely with restaurant owners and managers to identify areas for improvement and provide actionable recommendations to help them maintain a healthy and thriving business. Our goal is to create a positive impact on the restaurant industry by promoting a culture of excellence and accountability in food service.</p>
+					<p style="color:#fff;">We are a four-person company dedicated to ensuring restaurants are safe places for people to enjoy with their friends and family.</p>
 				</div>
 			</div>
 		</div>
