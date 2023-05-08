@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JAR Login</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
 	<style>
 		body {
 			background: #255C55;
@@ -104,16 +103,22 @@
 					<li class="nav-item">
 						<a class="nav-link" href="Inspection.html">Schedule Inspection</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Login.html">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Signup.html">Sign Up</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
 	</header>
     <div class="main">
         <div class="login">
-			<form id="f">
+			<form id="f" action="Login.php" method="post">
 				<label for="username">Username:</label>
 				<br>
-				<input type="text" id="username" class="text">
+				<input type="text" id="username" class="text" name="username">
 				<br>
 				<div id="user_empty" style="display:none;" class="error">
 					<span>Username required</span>
@@ -121,7 +126,7 @@
 				</div>
 				<label for="password">Password:</label>
 				<br>
-				<input type="password" id="password" class="text">
+				<input type="password" id="password" class="text" name="password">
 				<div id="pass_empty" style="display:none;" class="error">
 					<br>
 					<span>Password required</span>
@@ -140,7 +145,7 @@
 </body>
 <script>
     document.getElementById("f").addEventListener("submit", function(e) {
-		e.preventDefault();
+		//e.preventDefault();
 		let username = document.getElementById("username");
 		let password = document.getElementById("password");
 
@@ -157,8 +162,10 @@
 			document.getElementById("pass_empty").style.display = "inline";
 			error = true;
 		}
-		if (error)
+		if (error) {
 			console.log("error");
+			e.preventDefault();
+		}
 	});
 </script>
 </html>

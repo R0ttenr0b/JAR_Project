@@ -5,7 +5,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>JAR Login</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css">
 	<style>
 		body {
 			background: #255C55;
@@ -104,16 +103,43 @@
 					<li class="nav-item">
 						<a class="nav-link" href="Inspection.html">Schedule Inspection</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Login.html">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Signup.html">Sign Up</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
 	</header>
     <div class="main">
         <div class="login">
-			<form id="f">
+			<form id="f" action="Signup.php" method="post">
+				<label for="email">Email:</label>
+				<br>
+				<input type="text" id="email" class="text" name="email">
+				<br>
+				<div id="email_empty" style="display:none;" class="error">
+					<span>Email required</span>
+                    <br>
+				</div>
+				<label for="email2">Confirm Email:</label>
+				<br>
+				<input type="text" id="email2" class="text" name="email2">
+				<br>
+				<div id="email_empty" style="display:none;" class="error">
+					<span>Email required</span>
+                    <br>
+				</div>
+				<div id="email_match" style="display:none;" class="error">
+					<span>Emails do not match</span>
+                    <br>
+				</div>
+
 				<label for="username">Username:</label>
 				<br>
-				<input type="text" id="username" class="text">
+				<input type="text" id="username" class="text" name="username">
 				<br>
 				<div id="user_empty" style="display:none;" class="error">
 					<span>Username required</span>
@@ -122,7 +148,7 @@
 
 				<label for="password">Password:</label>
 				<br>
-				<input type="password" id="password" class="text">
+				<input type="password" id="password" class="text" name="password">
 				<div id="pass_empty" style="display:none;" class="error">
                     <br>
 					<span>Password required</span>
@@ -131,7 +157,7 @@
 				<br>
 				<label for="password2"> Confirm Password:</label>
 				<br>
-				<input type="password" id="password2" class="text">
+				<input type="password" id="password2" class="text" name="password2">
 				<br>
 				<div id="pass2_empty" style="display:none;" class="error">
 					<span>Password Confirmation Required</span>
@@ -151,20 +177,28 @@
 </body>
 <script>
     document.getElementById("f").addEventListener("submit", function(e) {
-		e.preventDefault();
+		//e.preventDefault();
 		let username = document.getElementById("username");
 		let password = document.getElementById("password");
 		let password2 = document.getElementById("password2");
+		let email = document.getElementById("email");
+		let email2 = document.getElementById("email2");
 
 
 		document.getElementById("user_empty").style.display = "none";
 		document.getElementById("pass_empty").style.display = "none";
 		document.getElementById("pass2_empty").style.display = "none";
 		document.getElementById("pass_match").style.display = "none";
+		document.getElementById("email_empty").style.display = "none";
+		document.getElementById("email_match").style.display = "none";
 
 		let error = false;
 		if (username.value == "") {
 			document.getElementById("user_empty").style.display = "inline";
+			error = true;
+		}
+		if (email.value == "") {
+			document.getElementById("email_empty").style.display = "inline";
 			error = true;
 		}
 		if (password.value == "") {
@@ -179,8 +213,14 @@
 			document.getElementById("pass_match").style.display = "inline";
 			error = true;
         }
-		if (error)
+		if (email.value != email2.value) {
+			document.getElementById("email_match").style.display = "inline";
+			error = true;
+		}
+		if (error) {
 			console.log("error");
+			e.preventDefault();
+		}
 	});
 </script>
 </html>
