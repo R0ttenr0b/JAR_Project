@@ -18,14 +18,10 @@
     $zip = htmlentities($_POST['zip']);
     $date = htmlentities($_POST['date']);
 
-    $sql = "INSERT INTO $table VALUES(NULL, '$fname', '$lname', '$email', '$phone', '$addr', '$city', '$zip', '$date')";
+    $sql = "INSERT INTO $table VALUES(NULL, '$fname', '$lname', '$email', '$phone', '$addr', '$city', '$zip', '$date', 0)";
     $result = $pdo->query($sql);
-
-    if(!($row = $result->fetch()))
-        exit("Missing input</p>");
-    else {
-        print_r($row);
-    }
-
+    
     $pdo = null;
+
+    exit("Thank you for your time!");
 ?>

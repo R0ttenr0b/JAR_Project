@@ -8,4 +8,4 @@ CREATE TABLE `jar_inspections`.`jar_users` (`userID` INT NOT NULL AUTO_INCREMENT
 Inspection Table:
 
 DROP TABLE `jar_inspections`.`jar_inspections`;
-CREATE TABLE `jar_inspections`.`jar_inspections` (`inspectionID` INT NOT NULL AUTO_INCREMENT , `firstname` VARCHAR(20) NOT NULL , `lastname` VARCHAR(20) NOT NULL , `email` VARCHAR(50) NOT NULL , `phonenumber` VARCHAR(15) NOT NULL , `address` VARCHAR(50) NOT NULL , `city` VARCHAR(20) NOT NULL , `zip` INT NOT NULL , `date` DATE NOT NULL , PRIMARY KEY (`inspectionID`)) ENGINE = InnoDB;
+CREATE TABLE `jar_inspections`.`jar_inspections` (`inspectionID` INT NOT NULL AUTO_INCREMENT , `firstname` VARCHAR(20) NOT NULL , `lastname` VARCHAR(20) NOT NULL , `email` VARCHAR(50) NOT NULL , `phonenumber` TEXT NOT NULL , `address` VARCHAR(30) NOT NULL , `city` VARCHAR(20) NOT NULL , `zip` INT(10) NOT NULL , `date` DATE NOT NULL , `fulfilled` BOOLEAN NOT NULL , PRIMARY KEY (`inspectionID`)) ENGINE = InnoDB;
