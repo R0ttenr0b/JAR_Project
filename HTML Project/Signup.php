@@ -28,7 +28,7 @@ if($result->fetch()) {
 $password = hash('sha256',htmlentities($_POST['password']));
 
 //Insert user into table
-$sql = "INSERT INTO $table VALUES (NULL, '$username','$email','$password', NULL, 'user')";
+$sql = "INSERT INTO $table VALUES (NULL, '$username','$email','$password')";
 
 $pdo->exec($sql);
 
