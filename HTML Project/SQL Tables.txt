@@ -1,0 +1,11 @@
+Need to create a user for the MySql database with username = "serveruser" and password = "serverpass"
+
+User Table:
+
+DROP TABLE 'jar_inspections'.'jar_users';
+CREATE TABLE `jar_inspections`.`jar_users` (`userID` INT NOT NULL AUTO_INCREMENT , `username` VARCHAR(20) NOT NULL , `email` VARCHAR(100) NOT NULL , `password` VARCHAR(300) NOT NULL , PRIMARY KEY (`userID`)) ENGINE = InnoDB;
+
+Inspection Table:
+
+DROP TABLE `jar_inspections`.`jar_inspections`;
+CREATE TABLE `jar_inspections`.`jar_inspections` (`inspectionID` INT NOT NULL AUTO_INCREMENT , `firstname` VARCHAR(20) NOT NULL , `lastname` VARCHAR(20) NOT NULL , `email` VARCHAR(50) NOT NULL , `phonenumber` VARCHAR(15) NOT NULL , `address` VARCHAR(50) NOT NULL , `city` VARCHAR(20) NOT NULL , `zip` INT NOT NULL , `date` DATE NOT NULL , PRIMARY KEY (`inspectionID`)) ENGINE = InnoDB;
