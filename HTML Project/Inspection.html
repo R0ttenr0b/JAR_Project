@@ -93,40 +93,40 @@
 		</nav>
 	</header>
 	<div class="Inspection-Form">
-		<form action="" method="" id="inspection">
+		<form action="Inspection.php" method="post" id="inspection">
 			<h1 style="text-align:center; font-size:1.8em;">Schedule an Inspection</h1>
 			<br>
 			<label for="fname">First Name: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
-			<input require type="text" id="fname">
+			<input require type="text" id="fname" name="fname">
 			<br>
 			<label for="lname">Last Name: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
-			<input require type="text" id="lname">
+			<input require type="text" id="lname" name="lname">
 			<br>
 			<label for="email">Email: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
-			<input require type="email" id="email">
+			<input require type="email" id="email" name="email">
 			<br>
 			<label for="phone">Phone Number: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
-			<input require type="text" id="phone">
+			<input require type="text" id="phone" name="phone">
 			<br>
 			<label for="addr">Address: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
-			<input require type="text" id="addr">
+			<input require type="text" id="addr" name="addr">
 			<br>
 			<label for="city">City: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
-			<input require type="text" id="city">
+			<input require type="text" id="city" name="city">
 			<br>
 			<label for="zip">Zip Code: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
-			<input require type="number" id="zip">
+			<input require type="number" id="zip" name="zip">
 			<br>
 			<label for="date">Date: </label> <span class="required" style="display:none;" id="required"> * Required</span>
 			<br>
-			<input require type="date" id="date">
+			<input require type="date" id="date" name="date">
 			<br>
 			<br>
 			<input type="submit" value="Schedule Inspection" class="submission">
@@ -135,7 +135,8 @@
 	</div>
 	<script>
 		document.getElementById("inspection").addEventListener("submit", function(e) {
-			e.preventDefault();
+			//e.preventDefault();
+			let problem = false;
 			let error = document.getElementsByClassName("required");
 			let inputs = document.querySelectorAll("input");
 
@@ -146,7 +147,11 @@
 			for(let i = 0; i < inputs.length - 2; i++) {
 				if(inputs[i].value == "") {
 					error[i].style.display = "inline";
+					problem = true;
 				}
+			}
+			if(problem) {
+				e.preventDefault();
 			}
 		});
 		document.getElementById("inspection").addEventListener("reset", function(e) {

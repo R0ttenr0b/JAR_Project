@@ -5,9 +5,9 @@ if (empty($_POST['email']) || empty($_POST['email2']) || empty($_POST["username"
     exit ("<p>Required fields empty</p>");
 
 else if ($_POST["email"] != $_POST["email2"])
-    exit ("<p> You did not enter the same email address! Click your browser's Back button to return to the previous page.</p>");
+    exit ("<p>Email addresses do not match</p>");
 
-else if ($_POST["password"] != $_POST["password"])
+else if ($_POST["password"] != $_POST["password2"])
     exit ("<p>Passwords do not match</p>");
 
 
