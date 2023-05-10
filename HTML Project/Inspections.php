@@ -93,7 +93,7 @@
         .submit_button {
             background-color:#4CAF50;
             color:white;
-            width:100px;
+            width:150px;
             text-align:center;
             border-radius:10px;
             border-width:0px;
@@ -181,6 +181,7 @@
 			$pdo = null;
 		?>
 		</table>
+		<br>
 		<input type="submit" value="Make Changes" class="submit_button">
 		</form>
 	</div>
